@@ -101,7 +101,7 @@ def main():
                     preds = model.predict(a)
                     print(preds)
                     if max(preds[0]) <= 0.80:
-                    st.text("THIS IS NOT A FILE OF LUNG DICOM")
+                        st.text("THIS IS NOT A FILE OF LUNG DICOM")
 
                     else:
                         label = classes[np.argmax(preds)]
