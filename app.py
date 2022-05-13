@@ -85,7 +85,7 @@ def main():
                 image = np.array(im)
                 return image
         image = load_image(image_bytes)
-        image = image/255
+        
             #print(image.shape)
             #print(image)
 
@@ -94,9 +94,10 @@ def main():
         if st.sidebar.button("Predicted"):
                     st.image(image_bytes, width=400)
                     #print(image_bytes.shape)
-                    my_data2 = cv2.resize(image, (224, 224),3)
+                    image = cv2.resize(image, (224, 224),3)
                     #my_data2 = image_bytes/255
-                    a = my_data2.reshape(1, 224, 224,3)
+                    a = image.reshape(1, 224, 224,3)
+                    a = a/255
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
