@@ -28,7 +28,7 @@ def main():
         # Config
         print(dicom_bytes)
         classes = ['AORTIC ENLARGEMENT ', 'COVID', 'OPACITY', 'NORMAL']
-        model = keras.models.load_model('VGG16_128_proposed.h5')
+        model = keras.models.load_model('RES_128_proposed.h5')
 
         mode = st.sidebar.radio(
             "Select input source",
