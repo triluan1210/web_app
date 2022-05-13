@@ -10,7 +10,7 @@ from tensorflow import keras
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
 from PIL import Image
-image = Image.open('D:\LVTN_1\streamlit-template\Capture.PNG')
+image = Image.open('Capture.PNG')
 
 st.sidebar.image(image,channels="RGB",width =250)
 class WrongFileType(ValueError):
@@ -27,8 +27,8 @@ def main():
         dicom_bytes = st.sidebar.file_uploader("Upload file", type=["dcm","dicom"])
         # Config
         print(dicom_bytes)
-        classes = ['Aortic enlargement ', 'Covid', 'Opacity', 'Normal']
-        model = keras.models.load_model('D:\LVTN_1\streamlit-template\VGG16_224.h5')
+        classes = ['AORTIC ENLARGEMENT ', 'COVID', 'OPACITY', 'NORMAL']
+        model = keras.models.load_model('RESNET50_224_dicom.h5')
 
         mode = st.sidebar.radio(
             "Select input source",
@@ -75,8 +75,8 @@ def main():
     if mode1 == 'Image':
         image_bytes = st.sidebar.file_uploader("Upload file", type=["jpg", "png"])
         # Config
-        classes = ['Covid', 'Normal', 'Pneumonia']
-        model = keras.models.load_model('D:\LVTN_1\streamlit-template\RESNET50_224_proposed.h5')
+        classes = ['COVID19', 'NORMAL', 'PNEUMONIA']
+        model = keras.models.load_model('RESNET50_224_image.h5')
 
         def load_image(img):
                 im = Image.open(img)
