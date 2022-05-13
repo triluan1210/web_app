@@ -46,10 +46,10 @@ def main():
         if mode == 'View Image':
 
             if st.sidebar.button("Load Image"):
-                st.image(image_dicom,width =400)
+                st.image(image_dicom,width =500)
 
             if st.sidebar.button("Predicted"):
-                st.image(image_dicom,width =400)
+                st.image(image_dicom,width =500)
                 #print(image_dicom.shape)
                 my_data2 = cv2.resize(image_dicom, (224, 224))
                 a = my_data2.reshape(-1, 224, 224, 1)
@@ -79,7 +79,7 @@ def main():
         model = keras.models.load_model('RESNET50_224_image.h5')
 
         if st.sidebar.button("Load Image"):
-                    st.image(image_bytes, width=400)
+                    st.image(image_bytes, width=500)
         def load_image(img):
                 im = Image.open(img)
                 image = np.array(im)
@@ -92,12 +92,11 @@ def main():
 
 
         if st.sidebar.button("Predicted"):
-                    st.image(image_bytes, width=400)
+                    st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
                     image = cv2.resize(image, (224, 224),3)
-                    #my_data2 = image_bytes/255
-                    #a = image.reshape(1, 224, 224,3)
-                    a = image/255
+                    a = image.reshape(1, 224, 224, 3)
+                    a = a/255
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
