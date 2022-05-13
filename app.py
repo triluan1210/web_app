@@ -51,12 +51,12 @@ def main():
             if st.sidebar.button("Predicted"):
                 st.image(image_dicom,width =400)
                 #print(image_dicom.shape)
-                my_data2 = cv2.resize(image_dicom, (224, 224))
-                a = my_data2.reshape(-1, 224, 224, 1)
+                my_data2 = cv2.resize(image_dicom, (128, 128))
+                a = my_data2.reshape(-1, 128, 128, 1)
                 # pass the image through the network to obtain our predictions
                 preds = model.predict(a)
                 print(max(preds[0]))
-                if max(preds[0]) <= 0.75:
+                if max(preds[0]) <= 0.85:
                     st.text("THIS IS NOT A FILE OF LUNG DICOM")
 
                 else:
@@ -78,6 +78,8 @@ def main():
         classes = ['COVID19', 'NORMAL', 'PNEUMONIA']
         model = keras.models.load_model('RESNET50_224_image.h5')
 
+        if st.sidebar.button("Load Image"):
+                    st.image(image_bytes, width=400)
         def load_image(img):
                 im = Image.open(img)
                 image = np.array(im)
@@ -87,8 +89,7 @@ def main():
             #print(image.shape)
             #print(image)
 
-        if st.sidebar.button("Load Image"):
-                    st.image(image_bytes, width=400)
+
 
         if st.sidebar.button("Predicted"):
                     st.image(image_bytes, width=400)
@@ -99,11 +100,12 @@ def main():
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
-                    if max(preds[0]) <= 0.90:
+                    if max(preds[0]) <= 0.94:
                         st.text("THIS IS NOT A FILE OF LUNG IMAGE")
+
                     else:
                         label = classes[np.argmax(preds)]
-                        st.text("RESULT : " + label)
+                        st.text("THE RESULT OF IMAGE IS: " + label + " WITH ACCURACY IS " + str(max(preds[0])*100) + " %")
 
 if __name__ == "__main__":
     try:
