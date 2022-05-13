@@ -56,7 +56,7 @@ def main():
                 # pass the image through the network to obtain our predictions
                 preds = model.predict(a)
                 print(max(preds[0]))
-                if max(preds[0]) <= 0.80:
+                if max(preds[0]) <= 0.85:
                     st.text("THIS IS NOT A FILE OF LUNG DICOM")
 
                 else:
