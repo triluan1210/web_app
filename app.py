@@ -78,6 +78,8 @@ def main():
         classes = ['COVID19', 'NORMAL', 'PNEUMONIA']
         model = keras.models.load_model('RESNET50_224_image.h5')
 
+        if st.sidebar.button("Load Image"):
+                    st.image(image_bytes, width=400)
         def load_image(img):
                 im = Image.open(img)
                 image = np.array(im)
@@ -87,8 +89,7 @@ def main():
             #print(image.shape)
             #print(image)
 
-        if st.sidebar.button("Load Image"):
-                    st.image(image_bytes, width=400)
+
 
         if st.sidebar.button("Predicted"):
                     st.image(image_bytes, width=400)
