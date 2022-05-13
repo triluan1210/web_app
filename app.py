@@ -96,8 +96,8 @@ def main():
                     #print(image_bytes.shape)
                     image = cv2.resize(image, (224, 224),3)
                     #my_data2 = image_bytes/255
-                    a = image.reshape(1, 224, 224,3)
-                    a = a/255
+                    #a = image.reshape(1, 224, 224,3)
+                    a = image/255
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
