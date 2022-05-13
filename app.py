@@ -61,7 +61,7 @@ def main():
 
                 else:
                     label = classes[np.argmax(preds)]
-                    st.text("THE RESULT OF DICOM IS: " + label + " WITH ACCURACY IS " + str(max(preds[0])*100) + " %")
+                    st.text("THE RESULT OF DICOM IS: " + label + " WITH ACCURACY " + str(max(preds[0])*100) + " %")
 
         if mode == 'View information' and st.sidebar.button("Load Information"):
             view = dicom_header.__repr__().split("\n")
@@ -105,7 +105,7 @@ def main():
 
                     else:
                         label = classes[np.argmax(preds)]
-                        st.text("THE RESULT OF IMAGE IS: " + label + " WITH ACCURACY IS " + str(max(preds[0])*100) + " %")
+                        st.text("THE RESULT OF IMAGE IS: " + label + " WITH ACCURACY " + str(max(preds[0])*100) + " %")
 
 if __name__ == "__main__":
     try:
