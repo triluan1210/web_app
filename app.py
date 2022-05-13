@@ -100,11 +100,12 @@ def main():
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
-                    if max(preds[0]) <= 0.90:
-                        st.text("THIS IS NOT A FILE OF LUNG IMAGE")
+                    if max(preds[0]) <= 0.80:
+                    st.text("THIS IS NOT A FILE OF LUNG DICOM")
+
                     else:
                         label = classes[np.argmax(preds)]
-                        st.text("RESULT : " + label)
+                        st.text("THE RESULT OF IMAGE IS: " + label + " WITH ACCURACY IS " + str(max(preds[0])*100) + " %")
 
 if __name__ == "__main__":
     try:
