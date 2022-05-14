@@ -96,6 +96,7 @@ def main():
 
 
         if st.sidebar.button("Predicted"):
+                    image = load_image(image_bytes)
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
                     image = cv2.resize(image, (224, 224))
