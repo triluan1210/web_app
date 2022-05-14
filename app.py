@@ -97,7 +97,6 @@ def main():
 
         if st.sidebar.button("Predicted"):
                     image = load_image(image_bytes)
-                    st.write(image.shape)
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
                     image = image/255
@@ -107,7 +106,7 @@ def main():
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
-                    if max(preds[0]) <= 0.958:
+                    if max(preds[0]) <= 0.9:
                         st.text("THIS IS NOT A FILE OF LUNG IMAGE")
 
                     else:
