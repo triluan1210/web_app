@@ -98,7 +98,7 @@ def main():
         if st.sidebar.button("Predicted"):
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
-                    image = cv2.resize(image, (224, 224),3)
+                    image = cv2.resize(image, (224, 224))
                     a = image.reshape(-1, 224, 224, 3)
                     a = a/255
                     # pass the image through the network to obtain our predictions
