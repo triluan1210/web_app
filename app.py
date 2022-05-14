@@ -97,11 +97,13 @@ def main():
 
         if st.sidebar.button("Predicted"):
                     image = load_image(image_bytes)
+                    print(image.shape)
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
+                    image = image/255
                     image = cv2.resize(image, (224, 224))
                     a = np.expand_dims(image, axis = 0)
-                    a = a/255
+                  
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
