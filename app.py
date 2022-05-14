@@ -23,7 +23,7 @@ def main():
     
     
     def load_image(img):
-                im = Image.open(img, mode='rgb')
+                im = Image.open(img, mode='RGB')
                 image = np.array(im)
                 return image
             
