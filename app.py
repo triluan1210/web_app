@@ -20,10 +20,14 @@ def main():
     st.title("CLASSIFICATION MEDICAL DICOM")
     st.sidebar.title("Configuration")
     st.sidebar.text("YOU SHOULD CHOOSE LUNG IMAGE")
+    
+    
     def load_image(img):
                 im = Image.open(img)
                 image = np.array(im)
                 return image
+            
+            
     mode1 = st.sidebar.radio(
         "Select type of input",
         ('Image', 'Dicom'))
@@ -83,9 +87,8 @@ def main():
         model = keras.models.load_model('RESNET50_224_image.h5')
 
         if st.sidebar.button("Load Image"):
-                    st.image(image_bytes, width=500)
-      
-                    image = load_image(image_bytes)
+            st.image(image_bytes, width=500)
+            image = load_image(image_bytes)
             
             #print(image.shape)
             #print(image)
