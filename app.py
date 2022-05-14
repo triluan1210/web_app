@@ -19,7 +19,7 @@ class WrongFileType(ValueError):
 def main():
     st.title("CLASSIFICATION MEDICAL DICOM")
     st.sidebar.title("Configuration")
-    st.sidebar.text("YOU ONLY CHOSE LUNG IMAGE")
+    st.sidebar.text("YOU SHOULD CHOOSE LUNG IMAGE")
     mode1 = st.sidebar.radio(
         "Select type of input",
         ('Image', 'Dicom'))
@@ -27,7 +27,7 @@ def main():
         dicom_bytes = st.sidebar.file_uploader("Upload file", type=["dcm","dicom"])
         # Config
         print(dicom_bytes)
-        classes = ['AORTIC ENLARGEMENT ', 'COVID', 'OPACITY', 'NORMAL']
+        classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
         model = keras.models.load_model('RES_128_proposed.h5')
 
         mode = st.sidebar.radio(
@@ -75,7 +75,7 @@ def main():
     if mode1 == 'Image':
         image_bytes = st.sidebar.file_uploader("Upload file", type=["jpg", "png"])
         # Config
-        classes = ['COVID19', 'NORMAL', 'PNEUMONIA']
+        classes = ['COVID 19', 'NORMAL', 'PNEUMONIA']
         model = keras.models.load_model('RESNET50_224_image.h5')
 
         if st.sidebar.button("Load Image"):
