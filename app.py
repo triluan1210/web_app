@@ -97,7 +97,7 @@ def main():
 
         if st.sidebar.button("Predicted"):
                     image = load_image(image_bytes)
-                    print(image.shape)
+                    st.write(image.shape)
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
                     image = image/255
