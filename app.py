@@ -83,8 +83,8 @@ def main():
     if mode1 == 'Image':
         image_bytes = st.sidebar.file_uploader("Upload file", type=["jpg", "png"])
         # Config
-        classes = ['COVID 19', 'NORMAL', 'PNEUMONIA']
-        model = keras.models.load_model('RESNET50_224_image.h5')
+        classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
+        model = keras.models.load_model('RES_128_proposed.h5')
 
         if st.sidebar.button("Load Image"):
             st.image(image_bytes, width=500)
