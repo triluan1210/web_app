@@ -83,8 +83,8 @@ def main():
     if mode1 == 'Image':
         image_bytes = st.sidebar.file_uploader("Upload file", type=["jpg", "png"])
         # Config
-        classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
-        model = keras.models.load_model('RES_128_proposed.h5')
+        classes = ['COVID 19', 'NORMAL', 'PNEUMONIA']
+        model = keras.models.load_model('RESNET50_224_proposed.h5')
 
         if st.sidebar.button("Load Image"):
             st.image(image_bytes, width=500)
@@ -100,7 +100,7 @@ def main():
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
                     image = image/255
-                    image = cv2.resize(image, (128, 128))
+                    image = cv2.resize(image, (224, 224))
                     a = np.expand_dims(image, axis = 0)
                     st.text(a.shape)
                     # pass the image through the network to obtain our predictions
