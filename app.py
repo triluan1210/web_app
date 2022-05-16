@@ -100,7 +100,7 @@ def main():
                     st.image(image_bytes, width=500)
                     #print(image_bytes.shape)
                     image = image/255
-                    image = cv2.resize(image, (224, 224))
+                    image = cv2.resize(image, (128, 128))
                     a = np.expand_dims(image, axis = 0)
                   
                     # pass the image through the network to obtain our predictions
