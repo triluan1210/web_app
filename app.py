@@ -102,7 +102,7 @@ def main():
                     image = image/255
                     image = cv2.resize(image, (224, 224))
                     a = np.expand_dims(image, axis = 0)
-                    st.text(a.shape)
+                    #st.text(a.shape)
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
