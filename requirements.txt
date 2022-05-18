@@ -10,3 +10,4 @@ tensorflow
 numpy
 sentencepiece
 requests
+GDCM
