@@ -12,3 +12,4 @@ sentencepiece
 requests
 GDCM
 python-gdcm
+pylibjpeg-libjpeg
