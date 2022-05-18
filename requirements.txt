@@ -11,3 +11,4 @@ numpy
 sentencepiece
 requests
 GDCM
+python-gdcm
