@@ -43,15 +43,14 @@ def main():
             ('View Image', 'View information'))
 
         if not dicom_bytes:
-            pass
-            #raise st.stop()
+            raise st.stop()
 
         try:
             dicom_header = pydicom.read_file(dicom_bytes, force=True)
             image_dicom = dicom_header.pixel_array/4095
         except:
-            st.write(WrongFileType("Does not appear to be a DICOM file"))
-
+            #st.write(WrongFileType("Does not appear to be a DICOM file"))
+             pass
         if mode == 'View Image':
 
             if st.sidebar.button("Load Image"):
