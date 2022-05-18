@@ -18,8 +18,8 @@ class WrongFileType(ValueError):
 
 def main():
     st.title("CLASSIFICATION MEDICAL DICOM")
-    st.sidebar.title("Configuration")
-    st.sidebar.text("YOU SHOULD CHOOSE LUNG IMAGE")
+    #st.sidebar.title("Configuration")
+    #st.sidebar.text("YOU SHOULD CHOOSE LUNG IMAGE")
     
     
     def load_image(img):
