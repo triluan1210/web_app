@@ -86,7 +86,7 @@ def main():
         #classes = ['COVID 19', 'NORMAL', 'PNEUMONIA']
         #model = keras.models.load_model('RESNET50_224_image.h5')
         classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
-        model = keras.models.load_model('RES_128_proposed.h5')
+        model = keras.models.load_model('VGG16_128_image.h5')
 
         if st.sidebar.button("Load Image"):
             st.image(image_bytes, width=500)
