@@ -48,10 +48,10 @@ def main():
         try:
             dicom_header = pydicom.read_file(dicom_bytes, force=True)
             image_dicom = dicom_header.pixel_array/4095
-            st.text(image_dicom)
+            #st.text(image_dicom)
         except:
-            #st.write(WrongFileType("Does not appear to be a DICOM file"))
-             pass
+            st.write(WrongFileType("Does not appear to be a DICOM file"))
+            #pass
         if mode == 'View Image':
 
             if st.sidebar.button("Load Image"):
