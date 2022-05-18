@@ -108,7 +108,7 @@ def main():
                     # pass the image through the network to obtain our predictions
                     preds = model.predict(a)
                     print(preds)
-                    if max(preds[0]) <= 0.98:
+                    if max(preds[0]) <= 0.99.4:
                         st.text("THIS IS NOT A FILE OF LUNG IMAGE")
 
                     else:
