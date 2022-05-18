@@ -34,7 +34,7 @@ def main():
     if mode1 == 'Dicom':
         dicom_bytes = st.sidebar.file_uploader("Upload file", type=["dcm","dicom"])
         # Config
-        print(dicom_bytes)
+        #print(dicom_bytes)
         classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
         model = keras.models.load_model('RES_128_proposed.h5')
 
@@ -43,7 +43,8 @@ def main():
             ('View Image', 'View information'))
 
         if not dicom_bytes:
-            raise st.stop()
+            pass
+            #raise st.stop()
 
         try:
             dicom_header = pydicom.read_file(dicom_bytes, force=True)
