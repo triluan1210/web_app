@@ -13,3 +13,4 @@ requests
 GDCM
 python-gdcm
 pylibjpeg-libjpeg
+pylibjpeg
