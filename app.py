@@ -57,7 +57,7 @@ def main():
             if st.sidebar.button("Load Image"):
                 st.image(image_dicom,width =500)
 
-            if st.sidebar.button("Predicted"):
+            if st.sidebar.button("Predict"):
                 st.image(image_dicom,width =500)
                 #print(image_dicom.shape)
                 my_data2 = cv2.resize(image_dicom, (128, 128))
