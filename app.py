@@ -4,7 +4,7 @@ import pydicom
 import numpy as np
 import cv2
 from tensorflow import keras
-import GDCM
+
 #pydicom.config.convert_wrong_length_to_UN = True
 #pydicom.config.Settings.infer_sq_for_un_vr = True
 
