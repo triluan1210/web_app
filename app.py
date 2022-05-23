@@ -88,33 +88,36 @@ def main():
         #model = keras.models.load_model('RESNET50_224_image.h5')
         classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
         model = keras.models.load_model('VGG16_224_image.h5')
+        mode = st.sidebar.radio(
+            "Select input source",
+            ('View Image', 'View information'))
+        if mode == 'View Image':
+            if st.sidebar.button("Load Image"):
+                st.image(image_bytes, width=500)
+                image = load_image(image_bytes)
 
-        if st.sidebar.button("Load Image"):
-            st.image(image_bytes, width=500)
-            image = load_image(image_bytes)
-            
-            #print(image.shape)
-            #print(image)
+                #print(image.shape)
+                #print(image)
 
 
 
-        if st.sidebar.button("Predicted"):
-                    image = load_image(image_bytes)
-                    st.image(image_bytes, width=500)
-                    #print(image_bytes.shape)
-                    image = image/255
-                    image = cv2.resize(image, (224, 224))
-                    a = np.expand_dims(image, axis = 0)
-                    #st.text(a.shape)
-                    # pass the image through the network to obtain our predictions
-                    preds = model.predict(a)
-                    print(preds)
-                    if max(preds[0]) <= 98:
-                        st.text("THIS IS NOT A FILE OF LUNG IMAGE")
+            if st.sidebar.button("Predicted"):
+                        image = load_image(image_bytes)
+                        st.image(image_bytes, width=500)
+                        #print(image_bytes.shape)
+                        image = image/255
+                        image = cv2.resize(image, (224, 224))
+                        a = np.expand_dims(image, axis = 0)
+                        #st.text(a.shape)
+                        # pass the image through the network to obtain our predictions
+                        preds = model.predict(a)
+                        print(preds)
+                        if max(preds[0]) <= 98:
+                            st.text("THIS IS NOT A FILE OF LUNG IMAGE")
 
-                    else:
-                        label = classes[np.argmax(preds)]
-                        st.text("THE RESULT OF IMAGE IS: " + label + " WITH ACCURACY " + str(max(preds[0])*100) + " %")
+                        else:
+                            label = classes[np.argmax(preds)]
+                            st.text("THE RESULT OF IMAGE IS: " + label + " WITH ACCURACY " + str(max(preds[0])*100) + " %")
 
 if __name__ == "__main__":
     try:
