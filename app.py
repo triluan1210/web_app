@@ -129,6 +129,12 @@ def main():
                 for a3 in e[2]:
                     infor_read = '{0:08b}'.format(a3)
                     save_infor_read.append(infor_read[-1:])
+                for a4 in e[3]:
+                  infor_read = '{0:08b}'.format(a4)
+                  save_infor_read.append(infor_read[-1:])
+                for a5 in e[4]:
+                  infor_read = '{0:08b}'.format(a5)
+                  save_infor_read.append(infor_read[-1:])
                 # print(len(save_infor_read))
                 k = 0
                 save_bit_read = []
@@ -157,8 +163,13 @@ def main():
 
                                 if row[1] == ')':
                                     infor_read_final.append('   ')
-
-                st.text(''.join(str(e) for e in infor_read_final))
+                  
+                final = []
+                for a in infor_read_final:
+                  if a == '@':
+                    break
+                  final.append(a)
+                st.text(''.join(str(e) for e in final))
 
 
 if __name__ == "__main__":
