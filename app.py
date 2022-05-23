@@ -10,7 +10,7 @@ from tensorflow import keras
 st.set_option('deprecation.showfileUploaderEncoding', False)
 from PIL import Image
 
-image = Image.open('D:/test1\streamlit-template\Capture.PNG')
+image = Image.open('Capture.PNG')
 
 st.sidebar.image(image, channels="RGB", width=250)
 
