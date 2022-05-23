@@ -38,7 +38,7 @@ def main():
         # Config
         # print(dicom_bytes)
         classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
-        model = keras.models.load_model('D:/test1\streamlit-template\RES_128_proposed.h5')
+        model = keras.models.load_model('RES_128_proposed.h5')
 
         mode = st.sidebar.radio(
             "Select input source",
@@ -89,7 +89,7 @@ def main():
         # classes = ['COVID 19', 'NORMAL', 'PNEUMONIA']
         # model = keras.models.load_model('RESNET50_224_image.h5')
         classes = ['AORTIC ENLARGEMENT ', 'COVID 19', 'OPACITY', 'NORMAL']
-        model = keras.models.load_model('D:/test1\streamlit-template\VGG16_224_image.h5')
+        model = keras.models.load_model('VGG16_224_image.h5')
         mode = st.sidebar.radio(
             "Select input source",
             ('View Image', 'View information'))
@@ -144,7 +144,7 @@ def main():
                 # print(len(save_bit_read))
                 infor_read_final = []
                 for a in save_bit_read:
-                    with open('D:/test1\protagonist.csv', newline='') as csvfile:
+                    with open('protagonist.csv', newline='') as csvfile:
                         spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
                         for row in spamreader:
                             if row[0] == str(int(a, 2)):
