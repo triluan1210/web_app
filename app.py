@@ -99,7 +99,7 @@ def main():
                 st.image(image_bytes, width=500)
                 image = load_image(image_bytes)
 
-            if st.sidebar.button("Predicted"):
+            if st.sidebar.button("Predict"):
                 image = load_image(image_bytes)
                 st.image(image_bytes, width=500)
                 # print(image_bytes.shape)
