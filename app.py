@@ -68,7 +68,7 @@ def main():
                 preds = model.predict(a)
                 print(max(preds[0]))
                 if max(preds[0]) <= 0.962:
-                    st.text("THIS IS NOT A FILE OF LUNG DICOM")
+                    st.text("THIS IS NOT A FILE OF LUNG DICOM OR NOT IMAGE IN MEDICINE")
 
                 else:
                     label = classes[np.argmax(preds)]
@@ -111,7 +111,7 @@ def main():
                 preds = model.predict(a)
                 print(preds)
                 if max(preds[0]) <= 0.98:
-                    st.text("THIS IS NOT A FILE OF LUNG IMAGE")
+                    st.text("THIS IS NOT A FILE OF LUNG IMAGE OR NOT IMAGE IN MEDICINE")
 
                 else:
                     label = classes[np.argmax(preds)]
