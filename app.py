@@ -20,7 +20,7 @@ class WrongFileType(ValueError):
 
 
 def main():
-    st.title("CLASSIFICATION MEDICAL DICOM")
+    st.title("CLASSIFY MEDICAL DICOM IMAGES")
 
     # st.sidebar.title("Configuration")
     # st.sidebar.text("YOU SHOULD CHOOSE LUNG IMAGE")
